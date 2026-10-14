@@ -1,4 +1,4 @@
-interface WindowRateLimitOptions {
+export interface WindowRateLimitOptions {
   limit: number;
   windowMs: number;
 }
@@ -17,6 +17,12 @@ export interface RateLimitContext {
 
   /** Current time as a Unix timestamp in milliseconds. */
   now: number;
+}
+
+export interface TokenBucketOptions {
+  capacity: number;
+  refillRatePerSecond: number;
+  cost?: number;
 }
 
 export type AlgorithmName =
